@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+
+
+#bo1 {
+    width: 100%;
+    height: 120px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(65,105,225);
+
+}
+
+
+#bo2 {
+    width: 100%;
+    height: 470px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 20px;
+    margin: 10px;
+    background: #ebf4f5;
+    padding: 10px;
+
+}
+
+#bo3 {
+    width: 100%;
+    height: 550px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    margin-top: 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+    padding: 10px;
+    background: #b9dcf2;
+}
+
+#bo4 {
+    width: 100%;
+    height: 550px;
+
+    margin-top: 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 10px;
+    background: #f6cfbe;
+}
+
+/* //////////////////progress bar///////// */
+
+
+.range {
+    border: none;
+    width: 900px;
+    height: 40px;
+    border-radius: 30px;
+    background: #E4E6EB;
+
+}
+
+.range__label {
+
+    position: relative;
+ 
+    width: 400px;
+    height: 40px;
+    border: 1px solid blue;
+    border-radius: 20px;
+    background-image: linear-gradient(#f89b29, #ff0f7b);
+    border: none;
+}
