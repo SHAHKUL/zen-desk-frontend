@@ -129,19 +129,19 @@ function Login() {
           </thead>
           <tbody>
             <tr>
+              <td>john@gmail.com</td>
+              <td>john</td>
               <td>admin</td>
-              <td>admin</td>
-              <td>True</td>
             </tr>
             <tr className="active-row">
-              <td>zen1</td>
-              <td>zen1</td>
-              <td>False</td>
+              <td>alice@gmail.com</td>
+              <td>alice</td>
+              <td>student</td>
             </tr>
             <tr>
-              <td>zen2</td>
-              <td>zen2</td>
-              <td>False</td>
+              <td>jack@gmail.com</td>
+              <td>jack</td>
+              <td>student</td>
             </tr>
           </tbody>
         </table>
