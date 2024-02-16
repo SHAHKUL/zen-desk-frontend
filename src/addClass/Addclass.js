@@ -4,54 +4,67 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Url from "../Url";
 import { useSelector } from "react-redux";
+import { useFormik } from "formik";
 
 function Addclass() {
-  const [batch, setBatch] = useState("");
-  const [day, setDay] = useState("");
-
-  const [date, setDate] = useState("");
-  const [join, setJoin] = useState("");
-
-  const [topic, setTopic] = useState("");
-
-  const [content, setContent] = useState("");
-  const [add, setAdd] = useState("");
-  const [act, setAct] = useState("");
   const [notifi, setNotify] = useState(false);
   const { token } = useSelector((state) => state.auth);
 
-  const createClass = async () => {
-    setNotify(true);
-    try {
-      await axios.post(
-        `${Url}/class/create`,
-        {
-          batch: batch,
-          day: [
-            { day: day },
-            { title: topic },
-            { date: date },
-            { link: join },
-            { activity: act },
-            { content: content },
-            { content2: add },
-          ],
-        },
-        {
-          headers: {
-            auth: token,
+  let formik = useFormik({
+    initialValues: {
+      batch: "",
+      day: "",
+      title: "",
+      date: "",
+      link: "",
+      activity: "",
+      content: "",
+      content2: "",
+    },
+    onSubmit: async (val) => {
+      try {
+        await axios.post(
+          `${Url}/class/create`,
+          {
+            batch: val.batch,
+            day: [
+              { day: val.day },
+              { title: val.title },
+              { date: val.date },
+              { link: val.join },
+              { activity: val.activity },
+              { content: val.content },
+              { content2: val.content2 },
+            ],
           },
-        }
-      );
-    } catch (error) {
-      console.log(error);
-    }
-  };
+          {
+            headers: {
+              auth: token,
+            },
+          }
+        );
+        setNotify(true);
+        formik.setValues({
+          batch: "",
+          day: "",
+          title: "",
+          date: "",
+          link: "",
+          activity: "",
+          content: "",
+          content2: "",
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  });
+
   return (
     <div className="demo-page">
       <div className="center-form">
         <main className="demo-page-content">
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form onSubmit={formik.handleSubmit}>
             <section>
               <div className="href-target" id="input-types"></div>
               <h1>Create Class</h1>
@@ -61,7 +74,9 @@ function Addclass() {
                 <input
                   type="text"
                   placeholder="Enter Batch "
-                  onChange={(e) => setBatch(e.target.value)}
+                  name="batch"
+                  value={formik.values.batch}
+                  onChange={formik.handleChange}
                 />
               </div>
 
@@ -70,7 +85,9 @@ function Addclass() {
                 <input
                   type="text"
                   placeholder="Enter Day"
-                  onChange={(e) => setDay(e.target.value)}
+                  name="day"
+                  value={formik.values.day}
+                  onChange={formik.handleChange}
                 />
               </div>
 
@@ -79,7 +96,9 @@ function Addclass() {
                 <input
                   type="text"
                   placeholder="Enter Date and Time"
-                  onChange={(e) => setDate(e.target.value)}
+                  name="date"
+                  value={formik.values.date}
+                  onChange={formik.handleChange}
                 />
               </div>
               <div className="nice-form-group">
@@ -87,7 +106,9 @@ function Addclass() {
                 <input
                   type="text"
                   placeholder="Enter Joining Link"
-                  onChange={(e) => setJoin(e.target.value)}
+                  name="link"
+                  value={formik.values.link}
+                  onChange={formik.handleChange}
                 />
               </div>
 
@@ -96,7 +117,9 @@ function Addclass() {
                 <input
                   type="text"
                   placeholder="Enter Topic Name"
-                  onChange={(e) => setTopic(e.target.value)}
+                  name="title"
+                  value={formik.values.title}
+                  onChange={formik.handleChange}
                 />
               </div>
 
@@ -105,7 +128,9 @@ function Addclass() {
                 <input
                   type="text"
                   placeholder="Enter Content"
-                  onChange={(e) => setContent(e.target.value)}
+                  name="content"
+                  value={formik.values.content}
+                  onChange={formik.handleChange}
                 />
               </div>
               <div className="nice-form-group">
@@ -113,25 +138,24 @@ function Addclass() {
                 <input
                   type="text"
                   placeholder="Enter Content"
-                  onChange={(e) => setAdd(e.target.value)}
+                  name="content2"
+                  value={formik.values.content2}
+                  onChange={formik.handleChange}
                   className="icon-left"
                 />
               </div>
               <div className="nice-form-group">
                 <label>Activity</label>
                 <input
-                  type="url"
+                  type="text"
                   placeholder="Activity link"
-                  onChange={(e) => setAct(e.target.value)}
+                  name="activity"
+                  value={formik.values.activity}
+                  onChange={formik.handleChange}
                   className="icon-left"
                 />
               </div>
-              <button
-                type="submit"
-                onClick={() => createClass()}
-                className="button-73"
-                role="button"
-              >
+              <button type="submit" className="button-73" role="button">
                 Submit
               </button>
             </section>

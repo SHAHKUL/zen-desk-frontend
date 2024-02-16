@@ -85,6 +85,7 @@ function Home() {
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
+                    marginTop:"8px"
                   }}
                 >
                   Join the class on time!{" "}

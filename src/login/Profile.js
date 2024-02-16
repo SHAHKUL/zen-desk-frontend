@@ -23,15 +23,11 @@ function Profile() {
     },
     onSubmit: async (val) => {
       try {
-        await axios.put(
-          `${Url}/auth/task/${user._id}`,
-          val,
-          {
-            headers: {
-              auth: token,
-            },
-          }
-        );
+        await axios.put(`${Url}/auth/task/${user._id}`, val, {
+          headers: {
+            auth: token,
+          },
+        });
         setNotify(true);
       } catch (error) {
         console.log(error);
