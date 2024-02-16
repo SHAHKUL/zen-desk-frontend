@@ -34,6 +34,7 @@ function Login() {
 
         if (str.data.message) {
           setErr(str.data.message);
+          setLog(false);
         } else {
           dispatch(login(str.data));
           if (str.data.isAdmin) {
@@ -44,7 +45,7 @@ function Login() {
           }
 
           navigate("/home");
-          setLog(false);
+        
         }
       } catch (error) {
         console.log(error);
