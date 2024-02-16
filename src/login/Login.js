@@ -4,14 +4,13 @@ import axios from "axios";
 import { useFormik } from "formik";
 import Url from "../Url";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { login } from "../redux/authSlice";
+import { useDispatch } from "react-redux";
+import { login, adminTask } from "../redux/authSlice";
 function Login() {
   const [err, setErr] = useState("");
   const [log, setLog] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
- 
 
   const formik = useFormik({
     initialValues: {
@@ -35,16 +34,18 @@ function Login() {
 
         if (str.data.message) {
           setErr(str.data.message);
-          setLog(false)
         } else {
           dispatch(login(str.data));
+          if (str.data.isAdmin) {
+            var obj = {};
+            obj.special = str.data.others.name;
 
-          setTimeout(() => {
-            navigate("/home");
-            setLog(false);
-          }, 2000);
+            dispatch(adminTask(obj));
+          }
+
+          navigate("/home");
+          setLog(false);
         }
-
       } catch (error) {
         console.log(error);
       }
@@ -117,6 +118,34 @@ function Login() {
           <button className="but-class">Register</button>
         </Link>
       </form>
+      <div className="table-login">
+        <table className="content-table">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>admin</td>
+              <td>admin</td>
+              <td>True</td>
+            </tr>
+            <tr className="active-row">
+              <td>zen1</td>
+              <td>zen1</td>
+              <td>False</td>
+            </tr>
+            <tr>
+              <td>zen2</td>
+              <td>zen2</td>
+              <td>False</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

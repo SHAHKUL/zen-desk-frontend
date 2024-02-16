@@ -5,8 +5,8 @@ const initialState = {
   token: null,
   admin: null,
   zenclass: null,
-  batch:null,
-
+  batch: null,
+  nameAdmin: null,
 };
 
 export const authSlice = createSlice({
@@ -23,22 +23,26 @@ export const authSlice = createSlice({
 
     logout: (state) => {
       state.user = null;
-      state.token =null;
+      state.token = null;
       state.admin = null;
       state.zenclass = null;
-      state.batch =null;
+      state.batch = null;
+      state.nameAdmin = null;
       localStorage.clear();
     },
-    assign:(state,action)=>{
+    assign: (state, action) => {
       state.zenclass = action.payload.zenclass;
-      state.batch=action.payload.batch
+      state.batch = action.payload.batch;
     },
-    showTask:(state,action)=>{
-      state.user=action.payload.user
-    }
+    showTask: (state, action) => {
+      state.user = action.payload.user;
+    },
+    adminTask: (state, action) => {
+      state.nameAdmin = action.payload.special;
+    },
   },
 });
 
-export const { login,  logout,assign,showTask } = authSlice.actions;
+export const { login, logout, assign, showTask, adminTask } = authSlice.actions;
 
 export default authSlice.reducer;

@@ -34,7 +34,7 @@ function Addadmin() {
       } else {
         setTimeout(() => {
           setSucc("");
-        }, 2000);
+        }, 3000);
 
         setSucc(res.data.success);
       }
@@ -60,6 +60,7 @@ function Addadmin() {
           <label>Admin</label>
 
           <select value={admins} onChange={(e) => setAdmins(e.target.value)}>
+            <option disabled>Choose the Admin Option</option>
             <option value="true">Yes</option>
             <option value="false">No</option>
           </select>

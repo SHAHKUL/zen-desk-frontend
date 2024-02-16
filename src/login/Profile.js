@@ -1,19 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useFormik } from "formik";
 import "./login.css";
 import axios from "axios";
 import Url from "../Url";
 function Profile() {
-  const [users, setuser] = useState({});
-  const [education, setEducation] = useState();
-  const [phone, setPhone] = useState();
-  const [year, setYear] = useState();
   const [notifi, setNotify] = useState(false);
   const { user } = useSelector((state) => state.auth);
   const { token } = useSelector((state) => state.auth);
   useEffect(() => {
     fetchOne();
   }, []);
+
+  let formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      batch: "",
+      education: "",
+      phone: "",
+      year: "",
+    },
+    onSubmit: async (val) => {
+      try {
+        await axios.put(
+          `${Url}/auth/task/${user._id}`,
+          val,
+          {
+            headers: {
+              auth: token,
+            },
+          }
+        );
+        setNotify(true);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  });
 
   const fetchOne = async () => {
     try {
@@ -22,29 +46,7 @@ function Profile() {
           auth: token,
         },
       });
-      setuser(res.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handleUpdate = async () => {
-    try {
-      setNotify(true);
-      await axios.put(
-        `${Url}/auth/task/${user._id}`,
-        {
-          ...users,
-          education,
-          phone,
-          year,
-        },
-        {
-          headers: {
-            auth: token,
-          },
-        }
-      );
+      formik.setValues(res.data);
     } catch (error) {
       console.log(error);
     }
@@ -52,10 +54,7 @@ function Profile() {
 
   return (
     <div className="profile-form">
-      <form
-        className="forms-profile-design"
-        onSubmit={(e) => e.preventDefault()}
-      >
+      <form className="forms-profile-design" onSubmit={formik.handleSubmit}>
         <h1 style={{ display: "flex", justifyContent: "center" }}>
           Personal Details
         </h1>
@@ -69,11 +68,12 @@ function Profile() {
               className="form-control"
               placeholder="First name"
               aria-label="First name"
-              value={user.name}
+              name="name"
+              value={formik.values.name}
+              onChange={formik.handleChange}
               disabled
             />
           </div>
-       
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">
@@ -84,7 +84,9 @@ function Profile() {
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            value={users.email}
+            name="email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
             disabled
           />
         </div>
@@ -97,11 +99,13 @@ function Profile() {
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            defaultValue={users.batch}
-            value={users.batch}
+            name="batch"
+            value={formik.values.batch}
+            onChange={formik.handleChange}
             disabled
           />
         </div>
+
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">
             Educational Qualification
@@ -111,8 +115,9 @@ function Profile() {
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            value={education ? education : users.education}
-            onChange={(e) => setEducation(e.target.value)}
+            name="education"
+            value={formik.values.education}
+            onChange={formik.handleChange}
           />
         </div>
         <div className="mb-3">
@@ -124,8 +129,9 @@ function Profile() {
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            value={phone ? phone : user.phone}
-            onChange={(e) => setPhone(e.target.value)}
+            name="phone"
+            value={formik.values.phone}
+            onChange={formik.handleChange}
           />
         </div>
         <div className="mb-3">
@@ -137,15 +143,12 @@ function Profile() {
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            value={year ? year : users.year}
-            onChange={(e) => setYear(e.target.value)}
+            name="year"
+            value={formik.values.year}
+            onChange={formik.handleChange}
           />
         </div>
-        <button
-          type="submit"
-          className="btn btn-outline-warning"
-          onClick={() => handleUpdate()}
-        >
+        <button type={"submit"} className="btn btn-outline-warning">
           Update
         </button>
       </form>
@@ -162,7 +165,6 @@ function Profile() {
             <div className="shadow scale"></div>
             <div className="message">
               <h3 className="alert">Updated Successfully!!!</h3>
-
             </div>
             <button className="button-box">
               <h1

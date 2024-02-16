@@ -10,6 +10,7 @@ function Header() {
   const { batche } = useSelector((state) => state.classDay);
   const { user } = useSelector((state) => state.auth);
   const { admin } = useSelector((state) => state.auth);
+  const { nameAdmin } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -55,7 +56,7 @@ function Header() {
                   {user.name ? user.name.toUpperCase() : null}
                 </h3>
               </span>
-              {admin && <h3 className="button-29">Admin View</h3>}
+              {admin && <h3 className="button-29">Admin {nameAdmin ?nameAdmin.toUpperCase():null}</h3>}
             </span>
           </div>
           <div className="col-lg-3">
