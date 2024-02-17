@@ -36,7 +36,6 @@ function Register() {
         } else {
           setErr(str.data.message);
         }
-
       } catch (error) {
         console.log(error);
       }
@@ -80,7 +79,9 @@ function Register() {
         {formik.errors.password ? (
           <div className="handle-error">{formik.errors.password}</div>
         ) : null}
-        <button type="submit" className="but-class">Register</button>
+        <button type="submit" className="but-class">
+          Register
+        </button>
         {err ? (
           <div className="handle-error">{err}</div>
         ) : (
@@ -90,7 +91,11 @@ function Register() {
         )}
 
         <Link to={"/"}>
-          <button type="submit" style={{ background: "red" }} className="but-class">
+          <button
+            type="submit"
+            style={{ background: "red" }}
+            className="but-class"
+          >
             Login
           </button>
         </Link>

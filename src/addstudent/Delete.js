@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 function Delete() {
   const [email, setMail] = useState("");
   const [succ, setSucc] = useState("");
-  
+
   const { token } = useSelector((state) => state.auth);
   const deleteStudent = async () => {
     try {

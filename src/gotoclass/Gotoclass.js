@@ -34,12 +34,15 @@ function Gotoclass() {
 
   const fetchOne = async (batch) => {
     try {
-      var res = await axios.get(`${Url}/class/eachBatch/${batch}`, {
-        headers: {
-          auth: token,
-        },
-      });
-      dispatch(assign({ zenclass: res.data, batch: batch }));
+      if (batch == undefined) return;
+      else {
+        var res = await axios.get(`${Url}/class/eachBatch/${batch}`, {
+          headers: {
+            auth: token,
+          },
+        });
+        dispatch(assign({ zenclass: res.data, batch: batch }));
+      }
     } catch (error) {
       console.log(error);
     }

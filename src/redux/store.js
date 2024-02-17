@@ -21,7 +21,7 @@ const persistConfig = {
 
 const reducers = combineReducers({
   auth: authSlice,
-  classDay:classSlice
+  classDay: classSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);

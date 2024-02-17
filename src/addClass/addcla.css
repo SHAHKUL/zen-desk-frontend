@@ -1,17 +1,14 @@
-.demo-page{
-margin-top: 40px;
-padding: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 1500px;
+.demo-page {
+  margin-top: 40px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1500px;
 }
-.center-form{
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 208%;  */
-    width: 700px;
+
+.center-form {
+  width: 700px;
 }
 
 
@@ -19,14 +16,13 @@ padding: 15px;
   position: relative;
   top: -80px;
   left: -300px;
-    height: 50px;
-    width: 50px;
-    transition: 150ms ease-in-out;
-    border-radius: 50%;
-  }
-  .backs:hover{
-    scale: 1.2;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  }
+  height: 50px;
+  width: 50px;
+  transition: 150ms ease-in-out;
+  border-radius: 50%;
+}
 
-
+.backs:hover {
+  scale: 1.2;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}

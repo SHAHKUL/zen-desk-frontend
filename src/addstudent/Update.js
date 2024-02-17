@@ -80,7 +80,9 @@ function Update() {
               >
                 check
               </button>
-              {val && <p className="batch-check"> Student Current Batch {val}</p>}
+              {val && (
+                <p className="batch-check"> Student Current Batch {val}</p>
+              )}
             </span>
           }
 

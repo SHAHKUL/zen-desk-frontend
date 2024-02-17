@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-
 import "./index.css";
 import Sidebar from "./sidebar/Sidebar";
 import Home from "./home/Home";
@@ -16,7 +14,6 @@ import Addadmin from "./addAdmin/Addadmin";
 import Deleteadmin from "./addAdmin/Deleteadmin";
 import Addclass from "./addClass/Addclass";
 import Mainclass from "./addClass/Mainclass";
-
 import Gotoclass from "./gotoclass/Gotoclass";
 import Studentlist from "./studentList/Studentlist";
 import Profile from "./login/Profile";
@@ -41,10 +38,8 @@ function App() {
           <Route path="/addAdmin/add" element={<Addadmin />} />
           <Route path="/addAdmin/delelte" element={<Deleteadmin />} />
           <Route path="/addClass" element={<Mainclass />} />
-
           <Route path="/addClass/add" element={<Addclass />} />
           <Route path="/goToClass" element={<Gotoclass />} />
-
           <Route path="/studentList" element={<Studentlist />} />
           <Route path="/task" element={<Task />} />
         </Routes>

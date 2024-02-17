@@ -28,20 +28,20 @@ function Task() {
   }, []);
 
   const fetch = async () => {
-    var res = await axios.get(`${Url}/auth/getOne/${user._id}`    ,{
-      headers:{
-        auth:token
-      }
+    var res = await axios.get(`${Url}/auth/getOne/${user._id}`, {
+      headers: {
+        auth: token,
+      },
     });
 
     setTask(res.data.task);
   };
 
   const fetchOne = async () => {
-    var res = await axios.get(`${Url}/auth/getOne/${user._id}`    ,{
-      headers:{
-        auth:token
-      }
+    var res = await axios.get(`${Url}/auth/getOne/${user._id}`, {
+      headers: {
+        auth: token,
+      },
     });
     setList(res.data);
   };
@@ -49,18 +49,22 @@ function Task() {
   const markPost = async () => {
     setNotify(true);
     try {
-      await axios.put(`${Url}/auth/task/${user._id}`, {
-        ...list,
-        task: [
-          ...list.task,
-          (list.task[val].comment = comment),
-          (list.task[val].mark = mark),
-        ],
-      }    ,{
-        headers:{
-          auth:token
+      await axios.put(
+        `${Url}/auth/task/${user._id}`,
+        {
+          ...list,
+          task: [
+            ...list.task,
+            (list.task[val].comment = comment),
+            (list.task[val].mark = mark),
+          ],
+        },
+        {
+          headers: {
+            auth: token,
+          },
         }
-      });
+      );
 
       fetch();
     } catch (error) {
@@ -89,43 +93,50 @@ function Task() {
           }}
         >
           {tasks
-            ? tasks.map((cur, idx) => {
-                return cur.name ? (
-                  <div className="task" key={idx} onClick={() => showTask(idx)}>
-                    <span
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
+            ? tasks
+                .map((cur, idx) => {
+                  return cur.name ? (
+                    <div
+                      className="task"
+                      key={idx}
+                      onClick={() => showTask(idx)}
                     >
-                      <h3>{user.name ? user.name.toUpperCase() : null}</h3>
-                      <p>
-                        Submited on
-                        {cur.created
-                          ? format(new Date(cur.created), " dd/MM/yyyy")
-                          : null}
-                      </p>
-                    </span>
-                    <span
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <p>
-                        ({batch}) - {cur.title ? cur.title.toUpperCase() : null}{" "}
-                        - Day {cur.day ? cur.day : null}
-                      </p>
-                      <span style={{ display: "flex" }}>
-                        <div className="num-design">
-                          {cur.mark ? cur.mark : null}
-                        </div>{" "}
-                        <div className="key-word">Task</div>
+                      <span
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <h3>{user.name ? user.name.toUpperCase() : null}</h3>
+                        <p>
+                          Submited on
+                          {cur.created
+                            ? format(new Date(cur.created), " dd/MM/yyyy")
+                            : null}
+                        </p>
                       </span>
-                    </span>
-                  </div>
-                ) : null;
-              })
+                      <span
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <p>
+                          ({batch ? batch.toUpperCase() : null}) -{" "}
+                          {cur.title ? cur.title.toUpperCase() : null} - Day{" "}
+                          {cur.day ? cur.day : null}
+                        </p>
+                        <span style={{ display: "flex" }}>
+                          <div className="num-design">
+                            {cur.mark ? cur.mark : null}
+                          </div>{" "}
+                          <div className="key-word">Task</div>
+                        </span>
+                      </span>
+                    </div>
+                  ) : null;
+                })
+                .reverse()
             : null}
         </div>
       </div>
@@ -150,7 +161,8 @@ function Task() {
             <div className="class-design">
               <p>
                 {" "}
-                ({batch}) - {each.title ? each.title.toUpperCase() : null}
+                ({batch ? batch.toUpperCase() : null}) -{" "}
+                {each.title ? each.title.toUpperCase() : null}
               </p>
               <p>
                 Submited on{" "}
@@ -181,33 +193,35 @@ function Task() {
                 <p className="task-box">{each.comment}.</p>
               </span>
             </div>
-          {admin?  <span>
-           {each.mark ? null : (
-              <div className="form-position">
-                <form
-                  className="form-comment"
-                  onSubmit={(e) => e.preventDefault()}
-                >
-                  <label>Mark</label>
-                  <input onChange={(e) => setMark(e.target.value)} />
-                  <label>Comments</label>
-                  <input onChange={(e) => setComment(e.target.value)} />
-                  <button
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                    onClick={() => markPost()}
-                    className="button-73"
-                    role="button"
-                  >
-                    Submit
-                  </button>
-                </form>
-              </div>
-            )}
-            </span>:null}
+            {admin ? (
+              <span>
+                {each.mark ? null : (
+                  <div className="form-position">
+                    <form
+                      className="form-comment"
+                      onSubmit={(e) => e.preventDefault()}
+                    >
+                      <label>Mark</label>
+                      <input onChange={(e) => setMark(e.target.value)} />
+                      <label>Comments</label>
+                      <input onChange={(e) => setComment(e.target.value)} />
+                      <button
+                        style={{
+                          display: "flex",
+                          justifyContent: "flex-start",
+                          alignItems: "center",
+                        }}
+                        onClick={() => markPost()}
+                        className="button-73"
+                        role="button"
+                      >
+                        Submit
+                      </button>
+                    </form>
+                  </div>
+                )}
+              </span>
+            ) : null}
           </div>
         </div>
       )}

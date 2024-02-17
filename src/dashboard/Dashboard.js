@@ -43,17 +43,17 @@ export const options = {
       grid: {
         display: false,
       },
-      ticks:{
-        callback:(value)=>value +" "+ 'day'
-      }
+      ticks: {
+        callback: (value) => value + " " + "day",
+      },
     },
     y: {
       min: 0,
       max: 10,
-      ticks:{
-        stepSize:1,
-        callback:(value)=>value +" "+ 'points'
-      }
+      ticks: {
+        stepSize: 1,
+        callback: (value) => value + " " + "points",
+      },
     },
   },
   responsive: true,
@@ -76,25 +76,25 @@ export const options2 = {
   },
   scales: {
     x: {
-      min:1,
+      min: 1,
       grid: {
         display: false,
       },
-      ticks:{
-        stepSize:1,
-        callback:(value)=>value +" "+ 'day'
+      ticks: {
+        stepSize: 1,
+        callback: (value) => value + " " + "day",
       },
     },
     y: {
       min: 0,
       max: 10,
-      ticks:{
-        stepSize:1,
-        callback:(value)=>value +" "+ 'Score'
+      ticks: {
+        stepSize: 1,
+        callback: (value) => value + " " + "Score",
       },
-      grid:{
-       borderDash:false
-      }
+      grid: {
+        borderDash: false,
+      },
     },
   },
   responsive: true,
@@ -115,7 +115,7 @@ export const options3 = {
     mode: "index",
     intersect: false,
   },
-  
+
   stacked: false,
   plugins: {
     title: {
@@ -125,14 +125,14 @@ export const options3 = {
   },
   scales: {
     y: {
-      min:1,
-      max:15,
+      min: 1,
+      max: 15,
       type: "linear",
       display: true,
       position: "left",
-      ticks:{
-        stepSize:1
-      }
+      ticks: {
+        stepSize: 1,
+      },
     },
     y1: {
       type: "linear",
@@ -144,10 +144,6 @@ export const options3 = {
     },
   },
 };
-
-
-
-
 
 function Dashboard() {
   const [users, setuser] = useState({});
@@ -195,7 +191,6 @@ function Dashboard() {
         data: [11, 15, 18],
         borderColor: "#ff1b6b",
         backgroundColor: "rgba(53, 162, 235, 0.5)",
-      
       },
       {
         fill: true,
@@ -250,15 +245,12 @@ function Dashboard() {
   }, []);
 
   const fetchOne = async () => {
-    var res = await axios.get(`${Url}/auth/getOne/${user._id}`
-    ,{
-      headers:{
-        auth:token
-      }
-    }
-    );
+    var res = await axios.get(`${Url}/auth/getOne/${user._id}`, {
+      headers: {
+        auth: token,
+      },
+    });
     setuser(res.data);
-
 
     var dataset = res.data.task
       ? res.data.task
@@ -267,10 +259,9 @@ function Dashboard() {
           })
           .filter((cur) => cur !== undefined)
       : null;
-   
 
     setChat({
-      labels: dataset.map((cur,idx)=> cur=(idx+1)),
+      labels: dataset.map((cur, idx) => (cur = idx + 1)),
       datasets: [
         {
           fill: true,
@@ -288,8 +279,7 @@ function Dashboard() {
     });
 
     setChat2({
-
-      labels: dataset.map((cur,idx)=> cur=(idx+1)),
+      labels: dataset.map((cur, idx) => (cur = idx + 1)),
       datasets: [
         {
           fill: true,
@@ -297,11 +287,9 @@ function Dashboard() {
           data: dataset,
           borderColor: "#a9ff68",
           backgroundColor: "#ae10f9 ",
-        tension:0.7,
-        pointBorderColor:'red'
+          tension: 0.7,
+          pointBorderColor: "red",
         },
-      
-      
       ],
     });
     setChat3({
@@ -319,7 +307,7 @@ function Dashboard() {
         {
           fill: true,
           label: "Overoll",
-          data:  dataset.map((cur) => (cur = 10)),
+          data: dataset.map((cur) => (cur = 10)),
           borderColor: "#d3321d",
           backgroundColor: "rgba(255, 99, 132, 0.5)",
           yAxisID: "y",
@@ -332,9 +320,8 @@ function Dashboard() {
           yAxisID: "y1",
         },
       ],
-    })
+    });
   };
-
 
   const total = users.task
     ? users.task.reduce((acc, cur) => {
@@ -351,7 +338,6 @@ function Dashboard() {
         })
         .filter((cur) => cur !== undefined)
     : null;
-
 
   return (
     <div className="container-fluid">
@@ -374,7 +360,7 @@ function Dashboard() {
                 </h5>
                 <div
                   className="range__label"
-                  style={{  width: `${totalClasses}%` }}
+                  style={{ width: `${totalClasses}%` }}
                 ></div>
               </div>
             </div>

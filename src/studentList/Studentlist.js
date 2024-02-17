@@ -3,7 +3,7 @@ import "./student.css";
 import React, { useEffect, useState } from "react";
 import Url from "../Url";
 import { useDispatch, useSelector } from "react-redux";
-import { showTask } from "../redux/authSlice";
+import { showTask, assign } from "../redux/authSlice";
 import { useNavigate } from "react-router-dom";
 function Studentlist() {
   const [list, setList] = useState([]);
@@ -39,6 +39,9 @@ function Studentlist() {
       var obj = {};
       obj._id = res.data._id;
       obj.name = res.data.name;
+      obj.batch = res.data.batch;
+
+      dispatch(assign(obj));
       dispatch(showTask({ user: obj }));
       navigate("/home/task");
     } catch (error) {

@@ -17,7 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(65,105,225);
+    background: rgb(65, 105, 225);
 
 }
 
@@ -71,7 +71,7 @@
 .range__label {
 
     position: relative;
- 
+
     width: 400px;
     height: 40px;
     border: 1px solid blue;

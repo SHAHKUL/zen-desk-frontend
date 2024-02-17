@@ -4,14 +4,12 @@
 
 
 .mainDesign {
-  /* width:  100vw; */
   height: 160vh;
 }
 
 
 
 #join {
-
   height: 75px;
   width: 65%;
   border: none;
@@ -82,10 +80,6 @@
   background-color: rgb(234, 234, 246);
   background-size: 30px 100px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
-
-
-
 }
 
 #box1 {
@@ -99,8 +93,6 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   padding: 15px;
   font-size: 20px;
-
-
 }
 
 #box2 {
@@ -117,31 +109,23 @@
   color: rgb(5, 5, 27);
   padding: 10px;
   font-size: larger;
-
 }
 
 #session {
   margin-top: 10px;
   border-radius: 5px;
-  font-size: larger;
+  font-size: 27px;
   text-align: center;
-
-
-
 }
 
 #round1 {
   display: flex;
-  /* justify-content: center;
-    align-items: center; */
   flex-flow: row wrap;
   align-content: center;
   text-align: center;
 }
 
 .round {
-
-
   margin: 10px;
   padding: 20px;
   background: lightblue;

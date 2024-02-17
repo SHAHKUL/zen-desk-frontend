@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Mainadd() {
   return (
@@ -14,8 +14,8 @@ function Mainadd() {
           <h1 id="head">Delete Admin</h1>
         </div>
       </Link>
-
-    </div>  )
+    </div>
+  );
 }
 
-export default Mainadd
+export default Mainadd;

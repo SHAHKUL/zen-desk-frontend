@@ -49,14 +49,18 @@ function Header() {
       >
         <div className="row">
           <div className="col-lg-9">
-            <span style={{ display: "flex",justifyContent:'space-between' }}>
-              <span className="button-90" style={{display:"flex"}}>
+            <span style={{ display: "flex", justifyContent: "space-between" }}>
+              <span className="button-90" style={{ display: "flex" }}>
                 <h3> Name:</h3>
                 <h3 style={{ marginLeft: "10px" }}>
                   {user.name ? user.name.toUpperCase() : null}
                 </h3>
               </span>
-              {admin && <h3 className="button-29">Admin {nameAdmin ?nameAdmin.toUpperCase():null}</h3>}
+              {admin && (
+                <h3 className="button-29">
+                  Admin {nameAdmin ? nameAdmin.toUpperCase() : null}
+                </h3>
+              )}
             </span>
           </div>
           <div className="col-lg-3">

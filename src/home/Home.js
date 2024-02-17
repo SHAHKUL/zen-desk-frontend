@@ -4,10 +4,8 @@ import Roadmap from "./Roadmap";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import Url from "../Url";
-
+import { useFormik } from "formik";
 function Home() {
-  const [front, setFront] = useState("");
-  const [back, setBack] = useState("");
   const [list, setList] = useState("");
   const [notifi, setNotify] = useState(false);
 
@@ -24,35 +22,74 @@ function Home() {
   useEffect(() => {
     singleUser();
   }, []);
-  const taskPost = async () => {
-    try {
-      setNotify(true);
-      await axios.put(
-        `${Url}/auth/task/${user._id}`,
-        {
-          ...list,
-          task: [
-            ...list.task,
-            {
-              name: user.name,
-              title: title,
-              frontend: front,
-              backend: back,
-              created: new Date(),
-              day: day,
-            },
-          ],
-        },
-        {
-          headers: {
-            auth: token,
+
+  let formik = useFormik({
+    initialValues: {
+      front: "",
+      back: "",
+    },
+    onSubmit: async (val) => {
+      try {
+        setNotify(true);
+        await axios.put(
+          `${Url}/auth/task/${user._id}`,
+          {
+            ...list,
+            task: [
+              ...list.task,
+              {
+                name: user.name,
+                title: title,
+                frontend: val.front,
+                backend: val.back,
+                created: new Date(),
+                day: day,
+              },
+            ],
           },
-        }
-      );
-    } catch (error) {
-      console.log(error);
-    }
-  };
+          {
+            headers: {
+              auth: token,
+            },
+          }
+        );
+        singleUser();
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  });
+
+  // const taskPost = async () => {
+  //   try {
+  //     setNotify(true);
+  //     await axios.put(
+  //       `${Url}/auth/task/${user._id}`,
+  //       {
+  //         ...list,
+  //         task: [
+  //           ...list.task,
+  //           {
+  //             name: user.name,
+  //             title: title,
+  //             frontend: front,
+  //             backend: back,
+  //             created: new Date(),
+  //             day: day,
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         headers: {
+  //           auth: token,
+  //         },
+  //       }
+  //     );
+  //     singleUser();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const singleUser = async () => {
     try {
@@ -69,8 +106,10 @@ function Home() {
 
   const successMsg = () => {
     setNotify(false);
-    setFront("");
-    setBack("");
+    formik.setValues({
+      front: "",
+      back: "",
+    });
   };
 
   return (
@@ -85,7 +124,7 @@ function Home() {
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
-                    marginTop:"8px"
+                    marginTop: "8px",
                   }}
                 >
                   Join the class on time!{" "}
@@ -189,29 +228,28 @@ function Home() {
                 data-bs-parent="#accordionFlushExample"
               >
                 <div className="accordion-body">
-                  <form
-                    className="form-design"
-                    onSubmit={(e) => e.preventDefault()}
-                  >
+                  <form className="form-design" onSubmit={formik.handleSubmit}>
                     <label>Front End Code</label>
                     <input
-                      onChange={(e) => setFront(e.target.value)}
-                      value={front}
+                      type="text"
+                      name="front"
+                      value={formik.values.front}
+                      onChange={formik.handleChange}
                     />
                     <label>Back End Code</label>
                     <input
-                      onChange={(e) => setBack(e.target.value)}
-                      value={back}
+                      type="text"
+                      name="back"
+                      value={formik.values.back}
+                      onChange={formik.handleChange}
                     />
 
                     <span
                       style={{ display: "flex", justifyContent: "flex-end" }}
                     >
-                      {front && back && (
-                        <button onClick={() => taskPost()} className="task-sub">
-                          Submit
-                        </button>
-                      )}
+                      <button type="submit" className="button-73">
+                        Submit
+                      </button>
                     </span>
                   </form>
                 </div>

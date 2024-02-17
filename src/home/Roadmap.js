@@ -10,7 +10,7 @@ function Roadmap() {
   const dispatch = useDispatch();
   const { zenclass } = useSelector((state) => state.auth);
   const { token } = useSelector((state) => state.auth);
-  var len = zenclass.length;
+  var len = zenclass ? zenclass.length : null;
 
   const { batch } = useSelector((state) => state.auth);
 

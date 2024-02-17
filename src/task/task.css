@@ -3,111 +3,111 @@
 
 
 .task {
-    height: 100px;
-    width: 600px;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    background: rgba(213, 202, 202, 0.306);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    margin-top: 20px;
+  height: 100px;
+  width: 600px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  background: rgba(213, 202, 202, 0.306);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  margin-top: 20px;
 }
 
-.task-desc{
-    margin-top: 20px;
-    height: 900px;
-    width: 680px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    border: none;
+.task-desc {
+  margin-top: 20px;
+  height: 900px;
+  width: 680px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border: none;
 }
 
-.code-box{
-    border: 1px solid #F59F00;
-    padding: 6px;
-    font-size: 18px;
-    font-family: "Noto Sans Tamil Supplement", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-word-spacing: 1px;
- 
+.code-box {
+  border: 1px solid #F59F00;
+  padding: 6px;
+  font-size: 18px;
+  font-family: "Noto Sans Tamil Supplement", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  word-spacing: 1px;
 
-
-}
-
-.task-comment{
-    margin-top: 30px;
-    background: #F0EFFF;
-    height: 200px;
-    padding: 10px;
-    font-size: 18px;
-    font-family: "Noto Sans Tamil Supplement", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-    letter-spacing: 1px;
-
-}
-
-.task-feed{
-    font-size: 18px;
-    font-family: "Noto Sans Tamil Supplement", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-    letter-spacing: 1px;
-}
-
-.task-box{
-    height: 70px;
-    width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    word-wrap: break-word;
-    padding: 5px;
-    background: white;
-}
-
-.form-position{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.class-design{
-    display: flex;
-    justify-content: space-between;
-    margin-top: -10px;
-    font-family: "Noto Sans Tamil Supplement", sans-serif;
-}
-
-.num-design{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #F59F00;
-    height: 35px;
-    width: 35px;
-    border: 1px solid #F59F00;
-    border-radius: 3px;
-    margin-right: 10px;
-    font-size: 18px;
-    background-color: white;
 
 
 }
 
-.key-word{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #F59F00;
+.task-comment {
+  margin-top: 30px;
+  background: #F0EFFF;
+  height: 200px;
+  padding: 10px;
+  font-size: 18px;
+  font-family: "Noto Sans Tamil Supplement", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 
-    border: 1px solid #F59F00;
-    border-radius: 3px;
-    margin-right: 10px;
-    font-size: 18px;
-    background-color: #fee1ab;
-    padding: 5px;
+  letter-spacing: 1px;
+
+}
+
+.task-feed {
+  font-size: 18px;
+  font-family: "Noto Sans Tamil Supplement", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  letter-spacing: 1px;
+}
+
+.task-box {
+  height: 70px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  word-wrap: break-word;
+  padding: 5px;
+  background: white;
+}
+
+.form-position {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.class-design {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -10px;
+  font-family: "Noto Sans Tamil Supplement", sans-serif;
+}
+
+.num-design {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F59F00;
+  height: 35px;
+  width: 35px;
+  border: 1px solid #F59F00;
+  border-radius: 3px;
+  margin-right: 10px;
+  font-size: 18px;
+  background-color: white;
+
+
+}
+
+.key-word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F59F00;
+
+  border: 1px solid #F59F00;
+  border-radius: 3px;
+  margin-right: 10px;
+  font-size: 18px;
+  background-color: #fee1ab;
+  padding: 5px;
 
 }
 
@@ -115,60 +115,59 @@ word-spacing: 1px;
 
 
 .button-73 {
-    appearance: none;
-    background-color: #4D5BF9;
-    border-radius: 40em;
-    border-style: none;
-    box-sizing: border-box;
-    color: whitesmoke;
-    cursor: pointer;
-    display: inline-block;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 15px;
-    font-weight: 600;
-    margin: 0;
-    outline: none;
-    padding: 2px;
-    quotes: auto;
-    text-align: center;
-    text-decoration: none;
-    transition: all .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    height: 50px;
-   
-    
- 
-  }
-  
-  .button-73:hover {
-    background-color: #FFC229;
-    box-shadow: #FF6314 0 -6px 8px inset;
-    transform: scale(1.125);
-    color: black;
-  }
-  
-  .button-73:active {
-    transform: scale(1.025);
-  }
-  
-  @media (min-width: 768px) {
-    .button-73 {
-      font-size: 18px;
-      padding: 7px 14px;
-    }
-  }
+  appearance: none;
+  background-color: #4D5BF9;
+  border-radius: 40em;
+  border-style: none;
+  box-sizing: border-box;
+  color: whitesmoke;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  outline: none;
+  padding: 2px;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  height: 50px;
 
 
-  #container3 {
-    position: absolute;
-    z-index: 100;
-    top: 400px;
-    left: 500px;
-    margin: auto;
-    overflow: hidden;
-    width: 700px;
-    height: 250px;
+
+}
+
+.button-73:hover {
+  background-color: #FFC229;
+  box-shadow: #FF6314 0 -6px 8px inset;
+  transform: scale(1.125);
+  color: black;
+}
+
+.button-73:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+  .button-73 {
+    font-size: 18px;
+    padding: 7px 14px;
   }
-  
+}
+
+
+#container3 {
+  position: absolute;
+  z-index: 100;
+  top: 400px;
+  left: 500px;
+  margin: auto;
+  overflow: hidden;
+  width: 700px;
+  height: 250px;
+}

@@ -2,7 +2,7 @@
 
 
 body {
-  
+
     background: rgb(255, 255, 255);
     overflow-x: scroll;
 }
@@ -98,10 +98,11 @@ body {
     cursor: pointer;
     font-family: 'Delius', cursive;
 }
-.toggle{
+
+.toggle {
     display: flex;
     justify-content: center;
     align-items: center;
-  
+
     cursor: pointer;
 }

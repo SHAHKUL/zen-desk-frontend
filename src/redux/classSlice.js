@@ -9,8 +9,7 @@ const initialState = {
   content: null,
   content2: null,
   activity: null,
-  batche:null
-
+  batche: null,
 };
 
 export const classSlice = createSlice({
@@ -26,9 +25,9 @@ export const classSlice = createSlice({
       state.content = action.payload.content;
       state.content2 = action.payload.content2;
       state.activity = action.payload.activity;
-      state.batche=action.payload.batch
+      state.batche = action.payload.batch;
     },
-    removeClass:(state)=>{
+    removeClass: (state) => {
       state.day = null;
       state.link = null;
       state.title = null;
@@ -37,12 +36,12 @@ export const classSlice = createSlice({
       state.content = null;
       state.content2 = null;
       state.activity = null;
-      state.batche=null
+      state.batche = null;
       localStorage.clear();
-    }
+    },
   },
 });
 
-export const { addClass,removeClass } = classSlice.actions;
+export const { addClass, removeClass } = classSlice.actions;
 
 export default classSlice.reducer;
