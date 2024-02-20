@@ -7,7 +7,6 @@ import { showTask, assign } from "../redux/authSlice";
 import { useNavigate } from "react-router-dom";
 function Studentlist() {
   const [list, setList] = useState([]);
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { token } = useSelector((state) => state.auth);

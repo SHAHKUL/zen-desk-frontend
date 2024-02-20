@@ -60,37 +60,6 @@ function Home() {
     },
   });
 
-  // const taskPost = async () => {
-  //   try {
-  //     setNotify(true);
-  //     await axios.put(
-  //       `${Url}/auth/task/${user._id}`,
-  //       {
-  //         ...list,
-  //         task: [
-  //           ...list.task,
-  //           {
-  //             name: user.name,
-  //             title: title,
-  //             frontend: front,
-  //             backend: back,
-  //             created: new Date(),
-  //             day: day,
-  //           },
-  //         ],
-  //       },
-  //       {
-  //         headers: {
-  //           auth: token,
-  //         },
-  //       }
-  //     );
-  //     singleUser();
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   const singleUser = async () => {
     try {
       var res = await axios.get(`${Url}/auth/getOne/${user._id}`, {

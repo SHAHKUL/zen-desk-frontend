@@ -43,6 +43,7 @@ function Roadmap() {
       var activity = arr[i].day[4];
       var content = arr[i].day[5];
       var content2 = arr[i].day[6];
+      var idVal = arr[i]._id;
 
       var obj = {
         ...day,
@@ -52,6 +53,7 @@ function Roadmap() {
         ...activity,
         ...content,
         ...content2,
+        idVal,
       };
       dispatch(addClass(obj));
     }

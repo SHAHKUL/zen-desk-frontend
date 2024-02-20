@@ -38,7 +38,7 @@
 
 
 .button-29 {
-  margin-left: 220px;
+  margin-right: 50px;
   align-items: center;
   appearance: none;
   background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
@@ -97,11 +97,101 @@
   font-weight: bold;
   font-size: 24px;
   height: 50px;
-  width: 200px;
+  width: 220px;
   border: none;
-
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 
+}
+
+
+
+.button-28 {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #FFC107;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFC107;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+
+  outline: none;
+  padding: 6px 4px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  will-change: transform;
+}
+
+.button-28:disabled {
+  pointer-events: none;
+}
+
+.button-28:hover {
+  color: #fff;
+  background-color: #FFC107;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  transform: translateY(-2px);
+}
+
+.button-28:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+
+
+
+.button-282 {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #DC3545;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #DC3545;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+
+  outline: none;
+  padding: 6px 4px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  will-change: transform;
+}
+
+.button-282:disabled {
+  pointer-events: none;
+}
+
+.button-282:hover {
+  color: #fff;
+  background-color: #DC3545;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  transform: translateY(-2px);
+}
+
+.button-282:active {
+  box-shadow: none;
+  transform: translateY(0);
 }

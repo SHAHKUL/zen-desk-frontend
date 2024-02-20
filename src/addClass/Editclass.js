@@ -1,14 +1,41 @@
-import React, { useState } from "react";
-import "./addcla.css";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Url from "../Url";
 import { useSelector } from "react-redux";
 import { useFormik } from "formik";
 
-function Addclass() {
+function Editclass() {
   const [notifi, setNotify] = useState(false);
   const { token } = useSelector((state) => state.auth);
+  let params = useParams();
+
+  useEffect(() => {
+    fetchOne();
+  }, []);
+
+  const fetchOne = async () => {
+    try {
+      var res = await axios.get(`${Url}/class/get/${params.id}`, {
+        headers: {
+          auth: token,
+        },
+      });
+
+      formik.setValues({
+        batch: res.data.batch,
+        day: res.data.day[0].day,
+        title: res.data.day[1].title,
+        date: res.data.day[2].date,
+        link: res.data.day[3].link,
+        activity: res.data.day[4].activity,
+        content: res.data.day[5].content,
+        content2: res.data.day[6].content2,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   let formik = useFormik({
     initialValues: {
@@ -16,22 +43,22 @@ function Addclass() {
       day: "",
       title: "",
       date: "",
-      join: "",
+      link: "",
       activity: "",
       content: "",
       content2: "",
     },
     onSubmit: async (val) => {
       try {
-        await axios.post(
-          `${Url}/class/create`,
+        await axios.put(
+          `${Url}/class/update/${params.id}`,
           {
             batch: val.batch,
             day: [
               { day: val.day },
               { title: val.title },
               { date: val.date },
-              { link: val.join },
+              { link: val.link },
               { activity: val.activity },
               { content: val.content },
               { content2: val.content2 },
@@ -44,22 +71,11 @@ function Addclass() {
           }
         );
         setNotify(true);
-        formik.setValues({
-          batch: "",
-          day: "",
-          title: "",
-          date: "",
-          link: "",
-          activity: "",
-          content: "",
-          content2: "",
-        });
       } catch (error) {
         console.log(error);
       }
     },
   });
-
   return (
     <div className="demo-page">
       <div className="center-form">
@@ -67,7 +83,7 @@ function Addclass() {
           <form onSubmit={formik.handleSubmit}>
             <section>
               <div className="href-target" id="input-types"></div>
-              <h1>Create Class</h1>
+              <h1>Edit Class</h1>
 
               <div className="nice-form-group">
                 <label>Batch</label>
@@ -106,8 +122,8 @@ function Addclass() {
                 <input
                   type="text"
                   placeholder="Enter Joining Link"
-                  name="join"
-                  value={formik.values.join}
+                  name="link"
+                  value={formik.values.link}
                   onChange={formik.handleChange}
                 />
               </div>
@@ -160,7 +176,7 @@ function Addclass() {
               </button>
             </section>
           </form>
-          <Link to={"/home/addClass"}>
+          <Link to={"/home/"}>
             <img
               className="backs"
               src="https://techzog.com/wp-content/uploads/2016/06/back-158491_960_720.png"
@@ -178,7 +194,7 @@ function Addclass() {
             </div>
             <div className="shadow scale"></div>
             <div className="message">
-              <h3 className="alert">Class Created Successfully!!!</h3>
+              <h3 className="alert">Class Updated Successfully!!!</h3>
             </div>
             <button className="button-box">
               <h1
@@ -196,4 +212,4 @@ function Addclass() {
   );
 }
 
-export default Addclass;
+export default Editclass;

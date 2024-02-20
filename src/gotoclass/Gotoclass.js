@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Url from "../Url";
 import { useDispatch, useSelector } from "react-redux";
-
 import { assign } from "../redux/authSlice";
 
 function Gotoclass() {

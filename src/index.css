@@ -4,14 +4,14 @@
   box-sizing: border-box;
   font-family: 'Times New Roman', Times, serif;
 
-  
+
 }
 
-#student{
+#student {
   text-align: center;
 }
 
 #top {
-   border-bottom: 1px solid rgb(108, 108, 108);
-   height: 70px;
+  border-bottom: 1px solid rgb(108, 108, 108);
+  height: 70px;
 }

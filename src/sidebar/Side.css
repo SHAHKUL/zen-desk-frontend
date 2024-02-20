@@ -2,7 +2,6 @@
 
 
 body {
-
     background: rgb(255, 255, 255);
     overflow-x: scroll;
 }
@@ -18,7 +17,6 @@ body {
     background: #4d5bf9;
     border-radius: 10px;
     box-sizing: initial;
-    /* min-height: 200vh; */
     transition: 0.3s;
     overflow-x: hidden;
     z-index: 999;

@@ -11,30 +11,6 @@ function Profile() {
   useEffect(() => {
     fetchOne();
   }, []);
-
-  let formik = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      batch: "",
-      education: "",
-      phone: "",
-      year: "",
-    },
-    onSubmit: async (val) => {
-      try {
-        await axios.put(`${Url}/auth/task/${user._id}`, val, {
-          headers: {
-            auth: token,
-          },
-        });
-        setNotify(true);
-      } catch (error) {
-        console.log(error);
-      }
-    },
-  });
-
   const fetchOne = async () => {
     try {
       var res = await axios.get(`${Url}/auth/getOne/${user._id}`, {
@@ -47,6 +23,30 @@ function Profile() {
       console.log(error);
     }
   };
+
+  let formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      batch: "",
+      education: "",
+      phone: "",
+      year: "",
+    },
+    onSubmit: async (val) => {
+      try {
+        var res = await axios.put(`${Url}/auth/task/${user._id}`, val, {
+          headers: {
+            auth: token,
+          },
+        });
+        formik.setValues(res.data);
+        setNotify(true);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  });
 
   return (
     <div className="profile-form">
@@ -144,7 +144,7 @@ function Profile() {
             onChange={formik.handleChange}
           />
         </div>
-        <button type={"submit"} className="btn btn-outline-warning">
+        <button type="submit" className="btn btn-outline-warning">
           Update
         </button>
       </form>

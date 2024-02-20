@@ -17,6 +17,7 @@ import Mainclass from "./addClass/Mainclass";
 import Gotoclass from "./gotoclass/Gotoclass";
 import Studentlist from "./studentList/Studentlist";
 import Profile from "./login/Profile";
+import Editclass from "./addClass/Editclass";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/addAdmin/add" element={<Addadmin />} />
           <Route path="/addAdmin/delelte" element={<Deleteadmin />} />
           <Route path="/addClass" element={<Mainclass />} />
+          <Route path="/editClass/:id" element={<Editclass />} />
           <Route path="/addClass/add" element={<Addclass />} />
           <Route path="/goToClass" element={<Gotoclass />} />
           <Route path="/studentList" element={<Studentlist />} />

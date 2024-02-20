@@ -10,6 +10,7 @@ const initialState = {
   content2: null,
   activity: null,
   batche: null,
+  classId: null,
 };
 
 export const classSlice = createSlice({
@@ -26,6 +27,7 @@ export const classSlice = createSlice({
       state.content2 = action.payload.content2;
       state.activity = action.payload.activity;
       state.batche = action.payload.batch;
+      state.classId = action.payload.idVal;
     },
     removeClass: (state) => {
       state.day = null;
@@ -37,6 +39,7 @@ export const classSlice = createSlice({
       state.content2 = null;
       state.activity = null;
       state.batche = null;
+      state.classId = null;
       localStorage.clear();
     },
   },
