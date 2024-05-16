@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { Link } from "react-router-dom";
 import Url from "../Url";
 import axios from "axios";
@@ -10,9 +10,30 @@ function Update() {
   const [err, setErr] = useState("");
   const [succ, setSucc] = useState("");
   const [val, setVal] = useState("");
-
+  const [list, setList] = useState([]);
   const { token } = useSelector((state) => state.auth);
 
+  useEffect(() => {
+    fetch2();
+  }, []);
+
+
+  const fetch2 = async () => {
+    try {
+      var res = await axios.get(`${Url}/class/get`, {
+        headers: {
+          auth: token,
+        },
+      });
+      var arr = [];
+      res.data.map((cur) => {
+        return arr.push(cur.batch);
+      });
+      setList([...new Set(arr)]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const createStudent = async () => {
     try {
       var res = await axios.put(
@@ -76,7 +97,7 @@ function Update() {
               <button
                 onClick={() => fetch()}
                 className="button-73"
-                role="button"
+              
               >
                 check
               </button>
@@ -87,13 +108,17 @@ function Update() {
           }
 
           <label>Batch</label>
-          <input onChange={(e) => setBatch(e.target.value)} />
+          <select onChange={(e) => setBatch(e.target.value)}>
+            {list.map((cur) => {
+              return <option value={cur}>{cur}</option>;
+            })}
+          </select>
           {err ? <div className="handle-error">{err}</div> : null}
           <button
             type="submit"
             onClick={() => createStudent()}
             className="button-73"
-            role="button"
+           
           >
             Submit
           </button>
@@ -112,6 +137,7 @@ function Update() {
         <img
           className="back"
           src="https://techzog.com/wp-content/uploads/2016/06/back-158491_960_720.png"
+          alt=""
         />
       </Link>
     </>

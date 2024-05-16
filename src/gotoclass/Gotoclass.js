@@ -23,7 +23,7 @@ function Gotoclass() {
       });
       var arr = [];
       res.data.map((cur) => {
-        arr.push(cur.batch);
+       return arr.push(cur.batch);
       });
       setList([...new Set(arr)]);
     } catch (error) {
@@ -33,7 +33,7 @@ function Gotoclass() {
 
   const fetchOne = async (batch) => {
     try {
-      if (batch == undefined) return;
+      if (batch === undefined) return;
       else {
         var res = await axios.get(`${Url}/class/eachBatch/${batch}`, {
           headers: {

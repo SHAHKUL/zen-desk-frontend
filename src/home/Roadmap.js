@@ -70,7 +70,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 0 ? "blue" : "white",
-            border: len + 1 == 1 ? "4px solid #F59F00" : null,
+            border: len + 1 === 1 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 0 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(0)}
@@ -91,7 +91,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 1 ? "blue" : "white",
-            border: len + 1 == 2 ? "4px solid #F59F00" : null,
+            border: len + 1 === 2 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 1 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(1)}
@@ -112,7 +112,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 2 ? "blue" : "white",
-            border: len + 1 == 3 ? "4px solid #F59F00" : null,
+            border: len + 1 === 3 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 2 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(2)}
@@ -133,7 +133,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 3 ? "blue" : "white",
-            border: len + 1 == 4 ? "4px solid #F59F00" : null,
+            border: len + 1 === 4 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 3 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(3)}
@@ -154,7 +154,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 4 ? "blue" : "white",
-            border: len + 1 == 5 ? "4px solid #F59F00" : null,
+            border: len + 1 === 5 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 4 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(4)}
@@ -175,7 +175,7 @@ function Roadmap() {
           className="round6"
           style={{
             background: len - 1 >= 5 ? "blue" : "white",
-            border: len + 1 == 6 ? "4px solid #F59F00" : null,
+            border: len + 1 === 6 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 5 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(5)}
@@ -197,7 +197,7 @@ function Roadmap() {
           id="right-top"
           style={{
             background: len - 1 >= 11 ? "blue" : "white",
-            border: len + 1 == 12 ? "4px solid #F59F00" : null,
+            border: len + 1 === 12 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 11 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(11)}
@@ -218,7 +218,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 10 ? "blue" : "white",
-            border: len + 1 == 11 ? "4px solid #F59F00" : null,
+            border: len + 1 === 11 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 10 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(10)}
@@ -239,7 +239,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 9 ? "blue" : "white",
-            border: len + 1 == 10 ? "4px solid #F59F00" : null,
+            border: len + 1 === 10 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 9 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(9)}
@@ -260,7 +260,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 8 ? "blue" : "white",
-            border: len + 1 == 9 ? "4px solid #F59F00" : null,
+            border: len + 1 === 9 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 8 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(8)}
@@ -281,7 +281,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 7 ? "blue" : "white",
-            border: len + 1 == 8 ? "4px solid #F59F00" : null,
+            border: len + 1 === 8 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 7 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(7)}
@@ -302,7 +302,7 @@ function Roadmap() {
           className="round12"
           style={{
             background: len - 1 >= 6 ? "blue" : "white",
-            border: len + 1 == 7 ? "4px solid #F59F00" : null,
+            border: len + 1 === 7 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 6 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(6)}
@@ -323,7 +323,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 12 ? "blue" : "white",
-            border: len + 1 == 13 ? "4px solid #F59F00" : null,
+            border: len + 1 === 13 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 12 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(12)}
@@ -344,7 +344,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 13 ? "blue" : "white",
-            border: len + 1 == 14 ? "4px solid #F59F00" : null,
+            border: len + 1 === 14 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 13 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(13)}
@@ -365,7 +365,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 14 ? "blue" : "white",
-            border: len + 1 == 15 ? "4px solid #F59F00" : null,
+            border: len + 1 === 15 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 14 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(14)}
@@ -386,7 +386,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 15 ? "blue" : "white",
-            border: len + 1 == 16 ? "4px solid #F59F00" : null,
+            border: len + 1 === 16 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 15 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(15)}
@@ -407,7 +407,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 16 ? "blue" : "white",
-            border: len + 1 == 17 ? "4px solid #F59F00" : null,
+            border: len + 1 === 17 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 16 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(16)}
@@ -428,7 +428,7 @@ function Roadmap() {
           className="round18"
           style={{
             background: len - 1 >= 17 ? "blue" : "white",
-            border: len + 1 == 18 ? "4px solid #F59F00" : null,
+            border: len + 1 === 18 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 17 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(17)}
@@ -449,7 +449,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 23 ? "blue" : "white",
-            border: len + 1 == 24 ? "4px solid #F59F00" : null,
+            border: len + 1 === 24 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 23 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(23)}
@@ -470,7 +470,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 22 ? "blue" : "white",
-            border: len + 1 == 23 ? "4px solid #F59F00" : null,
+            border: len + 1 === 23 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 22 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(22)}
@@ -491,7 +491,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 21 ? "blue" : "white",
-            border: len + 1 == 22 ? "4px solid #F59F00" : null,
+            border: len + 1 === 22 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 21 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(21)}
@@ -512,7 +512,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 20 ? "blue" : "white",
-            border: len + 1 == 21 ? "4px solid #F59F00" : null,
+            border: len + 1 === 21 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 20 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(20)}
@@ -533,7 +533,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 19 ? "blue" : "white",
-            border: len + 1 == 20 ? "4px solid #F59F00" : null,
+            border: len + 1 === 20 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 19 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(19)}
@@ -554,7 +554,7 @@ function Roadmap() {
           className="round24"
           style={{
             background: len - 1 >= 18 ? "blue" : "white",
-            border: len + 1 == 19 ? "4px solid #F59F00" : null,
+            border: len + 1 === 19 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 18 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(18)}
@@ -575,7 +575,7 @@ function Roadmap() {
           className="round25"
           style={{
             background: len - 1 >= 24 ? "blue" : "white",
-            border: len + 1 == 25 ? "4px solid #F59F00" : null,
+            border: len + 1 === 25 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 24 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(24)}
@@ -596,7 +596,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 25 ? "blue" : "white",
-            border: len + 1 == 26 ? "4px solid #F59F00" : null,
+            border: len + 1 === 26 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 25 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(25)}
@@ -617,7 +617,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 26 ? "blue" : "white",
-            border: len + 1 == 27 ? "4px solid #F59F00" : null,
+            border: len + 1 === 27 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 26 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(26)}
@@ -638,7 +638,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 27 ? "blue" : "white",
-            border: len + 1 == 28 ? "4px solid #F59F00" : null,
+            border: len + 1 === 28 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 27 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(27)}
@@ -659,7 +659,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 28 ? "blue" : "white",
-            border: len + 1 == 29 ? "4px solid #F59F00" : null,
+            border: len + 1 === 29 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 28 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(28)}
@@ -680,7 +680,7 @@ function Roadmap() {
           className="round30"
           style={{
             background: len - 1 >= 29 ? "blue" : "white",
-            border: len + 1 == 30 ? "4px solid #F59F00" : null,
+            border: len + 1 === 30 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 29 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(29)}
@@ -701,7 +701,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 35 ? "blue" : "white",
-            border: len + 1 == 36 ? "4px solid #F59F00" : null,
+            border: len + 1 === 36 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 35 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(35)}
@@ -722,7 +722,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 34 ? "blue" : "white",
-            border: len + 1 == 35 ? "4px solid #F59F00" : null,
+            border: len + 1 === 35 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 34 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(34)}
@@ -743,7 +743,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 33 ? "blue" : "white",
-            border: len + 1 == 34 ? "4px solid #F59F00" : null,
+            border: len + 1 === 34 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 33 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(33)}
@@ -764,7 +764,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 32 ? "blue" : "white",
-            border: len + 1 == 33 ? "4px solid #F59F00" : null,
+            border: len + 1 === 33 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 32 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(32)}
@@ -785,7 +785,7 @@ function Roadmap() {
           className="round"
           style={{
             background: len - 1 >= 31 ? "blue" : "white",
-            border: len + 1 == 32 ? "4px solid #F59F00" : null,
+            border: len + 1 === 32 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 31 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(31)}
@@ -806,7 +806,7 @@ function Roadmap() {
           className="round36"
           style={{
             background: len - 1 >= 30 ? "blue" : "white",
-            border: len + 1 == 31 ? "4px solid #F59F00" : null,
+            border: len + 1 === 31 ? "4px solid #F59F00" : null,
             cursor: len - 1 >= 30 ? "pointer" : "not-allowed",
           }}
           onClick={() => eachClass(30)}

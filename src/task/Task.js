@@ -121,11 +121,15 @@ function Task() {
                           justifyContent: "space-between",
                         }}
                       >
-                        <p>
-                          ({batch ? batch.toUpperCase() : null}) -{" "}
-                          {cur.title ? cur.title.toUpperCase() : null} - Day{" "}
-                          {cur.day ? cur.day : null}
-                        </p>
+                        {
+                          batch? <p>
+                          ({batch ? batch.toUpperCase() : null}) - {" "}
+                          {cur.title ? cur.title.toUpperCase() : "No Class"} - {" "}
+                           {cur.day ? cur.day : "No Class"}
+                        </p>:<p>No Batch assign</p>
+                        }
+                        
+                       
                         <span style={{ display: "flex" }}>
                           <div className="num-design">
                             {cur.mark ? cur.mark : null}
@@ -176,13 +180,13 @@ function Task() {
             <div className="code-box">
               <span style={{ display: "flex" }}>
                 <h5>Front-end source Code :</h5>
-                <a href={each.frontend} target="_blank">
+                <a href={each.frontend} target="_blank" rel="noreferrer">
                   {each.frontend}
                 </a>
               </span>
               <span style={{ display: "flex" }}>
                 <h5>Back-end source Code :</h5>
-                <a href={each.frontend} target="_blank">
+                <a href={each.frontend} target="_blank" rel="noreferrer">
                   {each.backend}
                 </a>
               </span>
@@ -213,7 +217,7 @@ function Task() {
                         }}
                         onClick={() => markPost()}
                         className="button-73"
-                        role="button"
+                      
                       >
                         Submit
                       </button>
